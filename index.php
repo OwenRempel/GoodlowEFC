@@ -1,0 +1,63 @@
+<?php
+
+
+//this is an extra check to prevent file structure climbing
+$AllowedRoutes = [
+    'blog',
+    'events',
+    'media',
+    'resources',
+    'sermons'
+];
+
+
+//Get url without parms
+$full_url = explode('?', $_SERVER['REQUEST_URI']);
+//Split into Array
+$Routes =  explode('/', $full_url[0]);
+//Remove first item of array to account for inital /
+array_shift($Routes);
+$fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to Goodlow EFC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/MediaFiles/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/css/table.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src='/js/main.js'></script>
+    </head>
+    <body>
+        <?php
+            include_once('Build/header.php');
+        ?>
+        <div class="content">
+
+            <?php
+
+            if(empty($Routes[0])){
+                include('./Views/home.html');
+            }elseif(is_file($fileUrl) and in_array($Routes[0], $AllowedRoutes)){
+                include($fileUrl);
+            }else{
+                include('./404.html');
+            }
+
+            ?>
+    
+        </div>
+
+        <?php
+            include_once('Build/footer.php');
+        ?>
+    </body>
+    
+    <script src='/js/menu.js'></script>
+    <script>
+        GetBulletin();
+    </script>
+</html>

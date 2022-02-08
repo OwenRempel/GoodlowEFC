@@ -1,0 +1,11 @@
+*/logs/*
+*/mysql/*
+*.env*
+**/API/Built
+**/API/Files/*
+Site/app/admin/**
+Site/app/Working files/**
+Site/app/run.php
+**/Files/**
+API/DB/secret.php
+API/Extras/gen.php
