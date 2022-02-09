@@ -143,6 +143,7 @@ function GetSermons(number = 'all'){
         share.innerHTML = '<h4>Share: </h4>'
         share.appendChild(img)
         fetch('/API/sermons/'+SermonID).then(response => response.json()).then(items => {
+            send.innerHTML = '';
             send.appendChild(sermonBuilder(items, false));
         });
     }else{
