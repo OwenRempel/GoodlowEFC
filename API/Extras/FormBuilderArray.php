@@ -188,7 +188,7 @@ $FormBuilderArray = [
                     'typeName'=>'FormInput',
                     'type'=>'file',
                     'inputLabel'=>'Presentation File',
-                    'accept'=>"png,jpg,jpeg,docx,pdf"
+                    'accept'=>"png,jpg,jpeg,docx,pdf,ppt,pptx"
                 ],
                 [
                     'name'=>'Date',
