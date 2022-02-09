@@ -125,6 +125,7 @@ function GetHomeSermon(){
 function GetSermons(number = 'all'){
     var ID = window.location.href.split('/')
     var send = document.getElementById('SermonBuilder');
+    send.innerHTML = '';
     if(ID.length === 5 && ID[4]){
         var SermonID = ID[4];
         var view = document.getElementById('showAll');
@@ -143,7 +144,7 @@ function GetSermons(number = 'all'){
         share.innerHTML = '<h4>Share: </h4>'
         share.appendChild(img)
         fetch('/API/sermons/'+SermonID).then(response => response.json()).then(items => {
-            send.innerHTML = '';
+            
             send.appendChild(sermonBuilder(items, false));
         });
     }else{
