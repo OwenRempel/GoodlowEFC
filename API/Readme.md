@@ -79,6 +79,15 @@ You will Receive data back in this format if it is valid. Error messages should 
     "Token": "5697b5839c2656f190b0a0b53883cf4c87794cb7"
 }
 ```
+
+## Search
+Search is available for any of the above except for <code>Youtube</code> and <code>podcast</code>.
+
+Simply make a request to 
+```http
+GET /API/{route}/search/{query}
+```
+Any information will be returned in the same format as the any other <code>GET</code> response
 ## Youtube/Podcast
 For the Youtube videos and Podcast videos since we are not adding any data ourselves but requesting the data be updated, it works a bit different.
 
