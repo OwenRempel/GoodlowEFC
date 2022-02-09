@@ -26,6 +26,10 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Welcome to Goodlow EFC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Welcome to the Goodlow Efree Church">
+
+
     <link rel="shortcut icon" type="image/png" href="/MediaFiles/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/table.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
