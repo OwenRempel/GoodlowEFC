@@ -119,4 +119,4 @@ CREATE TABLE `GoodlowEFC`.`Prayers` (
     PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB;
 
-INSERT INTO `Users` (`UserName`, `UserPassword`) VALUES ('Owen','$2y$10$CBD/4DQjdteLGIJQNLZ.0OXP.h2EQDEpUlV5kn4sgiU3RtlB4g4vW');
+---INSERT INTO `Users` (`UserName`, `UserPassword`) VALUES ('Owen','$2y$10$CBD/4DQjdteLGIJQNLZ.0OXP.h2EQDEpUlV5kn4sgiU3RtlB4g4vW');

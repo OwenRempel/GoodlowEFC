@@ -349,14 +349,12 @@ function getFormStruct($formArray, $redirectName, $action){
     $arrayToSend['form']['formTitle'] = 'Add '.$formArray['formTitle'];
     $arrayToSend['form']['callBack'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName;
     foreach($formArray['items'] as $items){
-        if($tokenData and !$tokenData[$items['name']]){
-            continue;
-        }
+       
         $itemArray = [];
-        if($items['type'] == 'date'){
+        if(isset($items['type']) and $items['type'] == 'date'){
             $itemArray['defaultValue'] = date('Y-m-d');
         }
-        if($items['type'] == 'datetime-local'){
+        if(isset($items['type']) and $items['type'] == 'datetime-local'){
             $itemArray['defaultValue'] = date('Y-m-d\TH:i');
         }
         if(isset($items['passwordConfirm'])){
