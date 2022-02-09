@@ -30,6 +30,17 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
     <link rel="stylesheet" type="text/css" href="/css/table.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
     <script src='/js/main.js'></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-60957304-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-60957304-1');
+    </script>
+
     </head>
     <body>
         <?php
