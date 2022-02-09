@@ -411,7 +411,7 @@ function selectFormData($localArray){
     $sendData = [];
     $selectItems = [];
     foreach($localArray['items'] as $item){
-        if($item['type'] == 'file' and isset($_GET['nofile'])){
+        if(isset($item['type']) and $item['type'] == 'file' and isset($_GET['nofile'])){
             continue;
         }
         
@@ -458,9 +458,9 @@ function selectFormData($localArray){
         foreach($localArray['items'] as $item){
             if($item['typeName'] = 'FormTextarea' and isset($row[$item['name']]) and strlen($row[$item['name']]) > 200 and (!isset($_GET['full']) or $_GET['full'] == 0)){
                 $data[$key][$item['name']] = substr($row[$item['name']], 0, 200)."...";
-            }elseif($item['typeName'] = 'FormInput' and $item['type'] == 'datetime-local'){
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'datetime-local'){
                 $data[$key][$item['name']] = date('D M d Y h:i A', strtotime($row[$item['name']])); 
-            }elseif($item['typeName'] = 'FormInput' and $item['type'] == 'date'){
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'date'){
                 $data[$key][$item['name']] = date('M d Y', strtotime($row[$item['name']])); 
             }
         }
