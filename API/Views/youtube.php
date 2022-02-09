@@ -1,6 +1,6 @@
 <?php
 
-include('../DB/secret.php');
+//include('DB/secret.php');
 
 global $YOUTUBE_API_KEY;
 
