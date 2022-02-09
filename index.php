@@ -7,7 +7,8 @@ $AllowedRoutes = [
     'events',
     'media',
     'resources',
-    'sermons'
+    'sermons',
+    'stat'
 ];
 
 
