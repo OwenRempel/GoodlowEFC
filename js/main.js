@@ -93,7 +93,7 @@ function sermonBuilder(data, share = false){
         }   
         if(item.Audio){
             var file = document.createElement('audio');
-            file.src = item.Audio
+            file.src = '/'+item.Audio
             file.classList.add('audioplay')
             file.setAttribute('controls', true)
             audiowrap.appendChild(file)
