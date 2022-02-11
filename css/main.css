@@ -513,7 +513,8 @@ audio::-webkit-media-controls-enclosure{
     justify-content: space-between;
   }
   .search{
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     font-size: 24px;
     padding: 10px 15px;
     color: var(--text-color);
