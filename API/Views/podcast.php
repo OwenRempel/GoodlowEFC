@@ -39,5 +39,5 @@ if(isset($Routes[1]) and !empty($Routes[1])){
             $count += 1;
         }    
     }
-    echo json_encode(['success'=>'Podcast Updated '.$count.' Added To The Database']);
+    echo json_encode(['success'=>'Podcast Updated '.$count.' Added To The Database', 'count'=>$count]);
 }
