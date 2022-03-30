@@ -396,13 +396,23 @@ function selectFormItem($localArray, $ID){
         $data = $DB->query("SELECT $selectItems from ".$localArray['tableName']." WHERE ID=:ID ".$sort." ", array('ID'=>$ID));
     }
 
-    if(isset($data[0]['ID'])){
-        $sendData['Data'] = $data;
-       echo json_encode($sendData);
-    }else{
-        echo stouts('The ID is invalid', 'error');
+    if(!isset($data[0]['ID'])){
+        echo stouts('The ID is invalid', 'error');  
+        exit();
     }
     
+    foreach($data as $key=>$row){
+        foreach($localArray['items'] as $item){
+            if($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'datetime-local'){
+                $data[$key][$item['name']] = date('D M d Y h:i A', strtotime($row[$item['name']])); 
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'date'){
+                $data[$key][$item['name']] = date('M d Y', strtotime($row[$item['name']])); 
+            }
+        }
+    }
+
+    $sendData['Data'] = $data;
+    echo json_encode($sendData);
 }
 //get bulk data
 function selectFormData($localArray){
