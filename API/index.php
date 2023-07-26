@@ -1,8 +1,31 @@
 <?php
 
+if(!isset($_ENV['Env_Check'])){
+    $data = file_get_contents('.env');
+    $items = explode(PHP_EOL, $data);
+    foreach($items as $item){
+        $ex = explode('=', $item);
+        $_ENV[$ex[0]] = trim($ex[1], '"');
+    }
+}
+
 require('DB/DB.php');
 
 require('Extras/FormBuilderArray.php');
+
+require 'vendor/autoload.php';
+use Aws\S3\S3Client;
+
+$client = new Aws\S3\S3Client([
+        'version' => 'latest',
+        'region'  => 'us-east-1',
+        'endpoint' => 'https://nyc3.digitaloceanspaces.com',
+        'use_path_style_endpoint' => false, // Configures to use subdomain/virtual calling format.
+        'credentials' => [
+                'key'    => "DO008FV3WPNLN2TZGQ4P",
+                'secret' => "3QDOloo0qc7PX1Vqu0aMDQKeb5S9RGEaWQeapWslga4",
+            ],
+]);
 
 //setting the correct timezone
 date_default_timezone_set('America/Dawson_Creek');
@@ -407,6 +430,8 @@ function selectFormItem($localArray, $ID){
                 $data[$key][$item['name']] = date('D M d Y h:i A', strtotime($row[$item['name']])); 
             }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'date'){
                 $data[$key][$item['name']] = date('M d Y', strtotime($row[$item['name']])); 
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'file' and isset($_ENV['file_url_prefex'])){
+                $data[$key][$item['name']] = $_ENV['file_url_prefex'].$row[$item['name']]; 
             }
         }
     }
@@ -470,6 +495,8 @@ function selectFormData($localArray){
                 $data[$key][$item['name']] = date('D M d Y h:i A', strtotime($row[$item['name']])); 
             }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'date'){
                 $data[$key][$item['name']] = date('M d Y', strtotime($row[$item['name']])); 
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'file' and isset($_ENV['file_url_prefex'])){
+                $data[$key][$item['name']] = $_ENV['file_url_prefex'].$row[$item['name']]; 
             }
         }
     }
@@ -481,6 +508,7 @@ function selectFormData($localArray){
 }
 //insert form data
 function insertFormData($RecivedFormData, $localArray, $Routes){
+    GLOBAL $client;
     $DB = new DB;
 
     
@@ -525,7 +553,7 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                         $ext = explode(',', $fileItems['accept']);
                     }
                     if(in_array($file_ext,$ext) == false){
-                        $errors[]="extension not allowed, please choose Allowed file type.";
+                        $errors[]="extension not allowed, please choose Allowed file type. $ext";
                     }
                     
                     if($file_size > 80000000){
@@ -537,16 +565,26 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                         }else{
                             $date = date('Y-m-d');
                         }
-                        $Uploadfile_dir = "Files/".$Routes[0]."/".$date."/";
-                        $file_dir = '../'.$Uploadfile_dir;
-                        if(!is_dir($file_dir)){
-                            mkdir($file_dir, 0755, true);
+                        if(isset($_ENV['use_spaces']) and $_ENV['use_spaces'] == "true"){
+                            $client->putObject([
+                                'Bucket' => 'te3',
+                                'Key'    => "GoodlowEFC/Files/".$Routes[0]."/".$date."/".$file_name.".".$file_ext,
+                                'SourceFile' => $file_tmp,
+                                'ACL'    => 'public-read',
+                            ]);
+                        }else{
+                            $Uploadfile_dir = "Files/".$Routes[0]."/".$date."/";
+                            $file_dir = '../'.$Uploadfile_dir;
+                            if(!is_dir($file_dir)){
+                                mkdir($file_dir, 0755, true);
+                            }
+                            $fileurl = $file_dir.$file_name.".".$file_ext;
+                            $uploadfileurl = $Uploadfile_dir.$file_name.".".$file_ext;
+                            move_uploaded_file($file_tmp, $fileurl);
+                            $insertStringArray[] = $key;
+                            $pdoDataArray[$key] = $uploadfileurl;
                         }
-                        $fileurl = $file_dir.$file_name.".".$file_ext;
-                        $uploadfileurl = $Uploadfile_dir.$file_name.".".$file_ext;
-                        move_uploaded_file($file_tmp, $fileurl);
-                        $insertStringArray[] = $key;
-                        $pdoDataArray[$key] = $uploadfileurl;
+                        
                     }
                     else{
                         echo json_encode(['error'=>$errors]);

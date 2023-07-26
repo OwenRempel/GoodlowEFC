@@ -1,6 +1,5 @@
 <?php
 
-
 //this is an extra check to prevent file structure climbing
 $AllowedRoutes = [
     'blog',

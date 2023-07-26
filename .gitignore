@@ -9,3 +9,4 @@ Site/app/run.php
 **/Files/**
 API/DB/secret.php
 API/Extras/gen.php
+API/vendor
