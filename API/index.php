@@ -22,8 +22,8 @@ $client = new Aws\S3\S3Client([
         'endpoint' => 'https://nyc3.digitaloceanspaces.com',
         'use_path_style_endpoint' => false, // Configures to use subdomain/virtual calling format.
         'credentials' => [
-                'key'    => "DO008FV3WPNLN2TZGQ4P",
-                'secret' => "3QDOloo0qc7PX1Vqu0aMDQKeb5S9RGEaWQeapWslga4",
+                'key'    => $_ENV['spaces_key'],
+                'secret' => $_ENV['spaces_secret'],
             ],
 ]);
 
