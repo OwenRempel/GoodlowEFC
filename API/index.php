@@ -495,7 +495,7 @@ function selectFormData($localArray){
                 $data[$key][$item['name']] = date('D M d Y h:i A', strtotime($row[$item['name']])); 
             }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'date'){
                 $data[$key][$item['name']] = date('M d Y', strtotime($row[$item['name']])); 
-            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'file' and isset($_ENV['file_url_prefex'])){
+            }elseif($item['typeName'] = 'FormInput' and isset($item['type']) and $item['type'] == 'file' and isset($_ENV['file_url_prefex']) and !empty($data[$key][$item['name']])){
                 $data[$key][$item['name']] = $_ENV['file_url_prefex'].$row[$item['name']]; 
             }
         }
@@ -546,14 +546,15 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                     $file_size =$file['size'];
                     $file_tmp =$file['tmp_name'];
                     $file_type=$file['type'];
-                    $file_ext=strtolower(explode('.',$file['name'])[1]);
-                    $file_name = time()."_".explode('.',$file['name'])[0];
+                    $file_name_array = explode('.',$file['name']);
+                    $file_ext=strtolower(array_pop($file_name_array));
+                    $file_name = time()."_".implode('.',$file_name_array);
                     $ext= array("pdf", "ppt", "pptx", "doc", "docx", 'jpg', 'mp3');
                     if(isset($fileItems['accept'])){
                         $ext = explode(',', $fileItems['accept']);
                     }
-                    if(in_array($file_ext,$ext) == false){
-                        $errors[]="extension not allowed, please choose Allowed file type. $ext";
+                    if(!in_array($file_ext,$ext)){
+                        $errors[]="extension not allowed, please choose Allowed file type owen. $file_ext";
                     }
                     
                     if($file_size > 80000000){
@@ -572,6 +573,8 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                                 'SourceFile' => $file_tmp,
                                 'ACL'    => 'public-read',
                             ]);
+                            $insertStringArray[] = $key;
+                            $pdoDataArray[$key] = "Files/".$Routes[0]."/".$date."/".$file_name.".".$file_ext;
                         }else{
                             $Uploadfile_dir = "Files/".$Routes[0]."/".$date."/";
                             $file_dir = '../'.$Uploadfile_dir;
