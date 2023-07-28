@@ -54,7 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "OPTIONS"){
 }
 //Check to see if Setup complete
 
-if(!is_file('Built')){
+if(!is_file('Built') and !isset($_ENV['Env_Check'])){
     DB::exFile(file_get_contents('sql/run.sql'));
     touch('Built');
 }
