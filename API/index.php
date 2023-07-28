@@ -13,7 +13,7 @@ require('DB/DB.php');
 
 require('Extras/FormBuilderArray.php');
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 use Aws\S3\S3Client;
 
 $client = new Aws\S3\S3Client([
