@@ -97,6 +97,7 @@ function sermonBuilder(data, share = false){
             file.src = item.Audio
             file.classList.add('audioplay')
             file.setAttribute('controls', true)
+            file.setAttribute('crossorigin', "anonymous")
             audiowrap.appendChild(file)
         }    
         
