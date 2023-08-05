@@ -15,7 +15,7 @@ $AllowedRoutes = [
 $full_url = explode('?', $_SERVER['REQUEST_URI']);
 //Split into Array
 $Routes =  explode('/', $full_url[0]);
-//Remove first item of array to account for inital /
+//Remove first item of array to account for initial /
 array_shift($Routes);
 $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
 ?>
