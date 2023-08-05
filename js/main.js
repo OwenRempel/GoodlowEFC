@@ -94,9 +94,10 @@ function sermonBuilder(data, share = false){
         if(item.Audio){
             var file = document.createElement('audio');
             //This allows the media player to work when not a root url
-            file.src = '/'+item.Audio
+            file.src = item.Audio
             file.classList.add('audioplay')
             file.setAttribute('controls', true)
+            file.setAttribute('crossorigin', "anonymous")
             audiowrap.appendChild(file)
         }    
         

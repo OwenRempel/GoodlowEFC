@@ -1,16 +1,14 @@
 <?php 
 
-require('secret.php');
-
 class DB{
 
     private static function connection(){
-        global $ADMIN_SECRET_KEYS;
-        $username=$ADMIN_SECRET_KEYS['username'];
-        $password=$ADMIN_SECRET_KEYS['password'];
-        $host="127.0.0.1";
-        $db="GoodlowEFC";
-        $pdo = new PDO("mysql:dbname=$db;host=$host", $username, $password);
+        $username=$_ENV['username'];
+        $password=$_ENV['password'];
+        $host=$_ENV['host'];
+        $db=$_ENV['database'];
+        $port = $_ENV['port'];
+        $pdo = new PDO("mysql:dbname=$db;port=$port;host=$host", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
