@@ -29,6 +29,7 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="Welcome to the Goodlow Efree Church">
+    <meta http-equiv="Cache-Control" content="max-age=3600"> <!-- Cache for 1 hour -->
 
 
     <link rel="shortcut icon" type="image/png" href="/MediaFiles/favicon.png"/>
