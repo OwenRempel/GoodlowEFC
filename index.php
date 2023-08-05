@@ -48,6 +48,10 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
 
     </head>
     <body>
+    <div itemscope itemtype="https://schema.org/WebSite">
+        <meta itemprop="url" content="https://goodlowchurch.ca/"/>
+        <meta itemprop="name" content="Goodlow EFree Church"/>
+    </div>
         <?php
             include_once('Build/header.php');
         ?>
