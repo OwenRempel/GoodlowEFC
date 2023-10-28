@@ -1,11 +1,13 @@
 function sermonSearchGrid(e){
-    var send = document.getElementById('SermonBuilder');
+    var send = document.getElementById('SermonGrid');
     var val = e.value
     if(val !== ''){
         fetch('/API/sermons/search/'+val).then(response => response.json()).then(items => {
             send.innerHTML = '';
             BuildSermonGrid(items);
         });
+    }else{
+        GridFetch(20);
     }
 }
 
