@@ -1,4 +1,4 @@
-function sermonSearch(e){
+function sermonSearchGrid(e){
     var send = document.getElementById('SermonBuilder');
     var val = e.value
     if(val !== ''){

@@ -26,7 +26,7 @@
     --shadow:3px 3px 7px 0px #455a6494;
     --text-color:black;
     --audio-background:unset;
-    --card_background:#2b2f3100;
+    --card_background:#f2f7fa;
   }
 }
 
@@ -595,6 +595,9 @@ audio::-webkit-media-controls-enclosure{
   padding: 10px;
   box-shadow: var(--shadow);
   border-radius: 4px;
+  position: sticky;
+  top: 2px;
+  background-color: var(--card_background);
 }
 .search {
   width: 230px;
