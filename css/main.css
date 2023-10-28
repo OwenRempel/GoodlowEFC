@@ -436,6 +436,26 @@ audio::-webkit-media-controls-enclosure{
 
 /*sermon Grid css*/
 
+#Player h4, p{
+  padding: 0px;
+  margin: 0px;
+}
+
+#Player{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: calc(100% - 420px);
+}
+.playerTitle{
+  display: flex;
+  flex-direction: column;
+}
+.playerMedia{
+  display: flex;
+}
+
+
 #SermonGrid {
   display: flex;
   width: 80vw;
@@ -469,7 +489,7 @@ audio::-webkit-media-controls-enclosure{
 .sermonGridItem span:nth-of-type(2) {
   display: flex;
   justify-content: space-between;
-  height: 20px;
+  height: 25px;
   overflow: hidden;
 }
 

@@ -66,7 +66,8 @@ function PlayerBuild(item){
         file.classList.add('btn','btwidemob', 'download-pptx')
         mediaWrap.appendChild(file)
     } 
-    
+    titleWrap.classList.add('playerTitle')
+    mediaWrap.classList.add('playerMedia')
     send.appendChild(titleWrap);
     send.appendChild(mediaWrap);
     
