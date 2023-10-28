@@ -54,7 +54,7 @@ function PlayerFetch(ID='none'){
              PlayerBuild(items);
         });
     }else{
-        fetch('/API/sermons/'+SermonID).then(response => response.json()).then(items => {
+        fetch('/API/sermons/'+ID).then(response => response.json()).then(items => {
             PlayerBuild(items);
         });
     }
