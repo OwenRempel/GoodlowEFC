@@ -39,14 +39,34 @@ function PlayerFetch(ID='none'){
     }
     
 }
-function PlayerBuild(items){
-    console.log(items);
+function PlayerBuild(item){
+    console.log(item);
     var send = document.getElementById('Player');
     send.innerHTML = '';
-    for (let i = 0; i < items.Data.length; i++) {
-        var wrap = document.createElement('div');
-        var titleWrap = document.createElement('div');
-        var dateWrap = document.createElement('span');    
-        var mediaWrap = document.createElement('span');
-    }
+    var titleWrap = document.createElement('div');
+    titleWrap.innerHTML = "<h4>"+item.Title+"</h4>"; 
+    titleWrap.innerHTML += '<p>'+item.Date+'</p>';
+        
+    var mediaWrap = document.createElement('span');
+    if(item.Audio){
+        var file = document.createElement('audio');
+        //This allows the media player to work when not a root url
+        file.src = item.Audio
+        file.classList.add('audioplay')
+        file.setAttribute('controls', true)
+        file.setAttribute('crossorigin', "anonymous")
+        mediaWrap.appendChild(file)
+    }   
+    if(item.File){
+        var file = document.createElement('a');
+        file.href = item.File
+        file.setAttribute('target', '_blank')
+        file.innerText = 'PowerPoint'
+        file.classList.add('btn','btwidemob', 'download-pptx')
+        mediaWrap.appendChild(file)
+    } 
+    
+    send.appendChild(titleWrap);
+    send.appendChild(mediaWrap);
+    
 }
