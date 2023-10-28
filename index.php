@@ -30,7 +30,7 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
     <meta name="description" content="Welcome to the Goodlow Efree Church">
     <meta http-equiv="Cache-Control" content="max-age=3600"> <!-- Cache for 1 hour -->
 
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="shortcut icon" type="image/png" href="/MediaFiles/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/table.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">

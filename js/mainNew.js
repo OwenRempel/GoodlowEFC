@@ -1,35 +1,29 @@
-function GetSermonGrid(){
-    var ID = window.location.href.split('/')
-    var send = document.getElementById('SermonBuilder');
-    send.innerHTML = '';
-    if(ID.length === 5 && ID[4]){
-        var SermonID = ID[4];
-        var view = document.getElementById('showAll');
-        view.addEventListener('click', function(){
-            window.location.replace('/sermons')
-        })
-        view.innerText = 'Back'
-        var share = document.getElementById('share');
-        share.style.display = 'flex';
-        var img = document.createElement('img');
-        img.src = "/MediaFiles/photos/facebook.png";
-        img.classList.add('facebookshare')
-        img.addEventListener('click', function(){
-            window.open('http://www.facebook.com/share.php?u=www.goodlowchurch.ca/sermons/'+SermonID,'popup','width=600,height=800')
-        })
-        share.innerHTML = '<h4>Share: </h4>'
-        share.appendChild(img)
-        fetch('/API/sermons/'+SermonID).then(response => response.json()).then(items => {
-            
-            send.appendChild(sermonBuilder(items, false));
-        });
-    }else{
+function GridFetch(number = 'all'){
         fetch('/API/sermons?limit='+number).then(response => response.json()).then(items => {
-            send.appendChild(sermonBuilder(items, true));
+            BuildSermonGrid(items);
         });
+}
+function BuildSermonGrid(items){
+    var send = document.getElementById('SermonGrid');
+    send.innerHTML = '';
+    for (let i = 0; i < items.Data.length; i++) {
+        const item = items.Data[i];
+        var wrap = document.createElement('div');
+        var titleWrap = document.createElement('span');
+        titleWrap.innerHTML = "<h3>"+item.Title+"</h3>";
+        titleWrap.innerHTML += '<p>'+item.Date+'</p>';  
+        var mediaWrap = document.createElement("span");
+        if(item.File){
+            mediaWrap.innerHTML += '<span class="material-symbols-outlined">slideshow</span>'
+        }
+        if(item.Audio){
+            mediaWrap.innerHTML = '<span class="material-symbols-outlined">music_note</span>'
+        }
+        wrap.className('sermonGridItem');
+        wrap.appendChild(titleWrap);
+        wrap.appendChild(mediaWrap);
+        send.appendChild(wrap)
     }
-    
-    
 }
 function PlayerFetch(ID='none'){
     if(ID === 'none'){
@@ -45,4 +39,12 @@ function PlayerFetch(ID='none'){
 }
 function PlayerBuild(items){
     console.log(items);
+    var send = document.getElementById('Player');
+    send.innerHTML = '';
+    for (let i = 0; i < items.Data.length; i++) {
+        var wrap = document.createElement('div');
+        var titleWrap = document.createElement('div');
+        var dateWrap = document.createElement('span');    
+        var mediaWrap = document.createElement('span');
+    }
 }
