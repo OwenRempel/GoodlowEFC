@@ -34,6 +34,7 @@ $fileUrl = (!empty($Routes[0]) ? './Views/'.$Routes[0].'.html' : "");
     <link rel="shortcut icon" type="image/png" href="/MediaFiles/favicon.png"/>
     <link rel="stylesheet" type="text/css" href="/css/table.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <script src='/js/mainNew.js'></script>
     <script src='/js/main.js'></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->

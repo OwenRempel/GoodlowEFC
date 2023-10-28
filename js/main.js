@@ -124,6 +124,7 @@ function GetHomeSermon(){
         send.appendChild(sermonBuilder(items));
     });
 }
+
 function GetSermons(number = 'all'){
     var ID = window.location.href.split('/')
     var send = document.getElementById('SermonBuilder');
