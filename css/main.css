@@ -9,6 +9,18 @@
   'opsz' 24
 }
 
+/*sermon Grid css*/
+
+.sermonGridItem{
+  background-color: grey;
+}
+.sermonGridItem span:nth-of-type(1){
+  display: flex;
+}
+.sermonGridItem span:nth-of-type(2){
+  display: flex;
+}
+
 
 
 :root{
