@@ -41,6 +41,7 @@ function PlayerFetch(ID='none'){
 }
 function PlayerBuild(item){
     console.log(item);
+    item = item.Data
     var send = document.getElementById('Player');
     send.innerHTML = '';
     var titleWrap = document.createElement('div');
