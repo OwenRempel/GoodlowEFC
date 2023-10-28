@@ -470,6 +470,7 @@ audio::-webkit-media-controls-enclosure{
   display: flex;
   justify-content: space-between;
   height: 20px;
+  overflow: hidden;
 }
 
 
