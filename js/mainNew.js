@@ -10,19 +10,19 @@ function BuildSermonGrid(items){
         const item = items.Data[i];
         var wrap = document.createElement('div');
         var titleWrap = document.createElement('span');
-        titleWrap.innerHTML = "<h3>"+item.Title+"</h3>";
-        titleWrap.innerHTML += '<p>'+item.Date+'</p>';  
-        var mediaWrap = document.createElement("span");
+        titleWrap.innerHTML = "<h4>"+item.Title+"</h4>"; 
+        var footWrap = document.createElement("span");
+        footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>'; 
         if(item.Audio){
-            mediaWrap.innerHTML += '<span class="Audio material-symbols-outlined">music_note</span>'
+            footWrap.innerHTML += '<span class="Audio material-symbols-outlined">music_note</span>'
         }
         if(item.File){
-            mediaWrap.innerHTML += '<span class="File material-symbols-outlined">slideshow</span>'
+            footWrap.innerHTML += '<span class="File material-symbols-outlined">slideshow</span>'
         }
         
         wrap.classList.add('sermonGridItem');
         wrap.appendChild(titleWrap);
-        wrap.appendChild(mediaWrap);
+        wrap.appendChild(footWrap);
         send.appendChild(wrap)
     }
 }
