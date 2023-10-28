@@ -4,7 +4,12 @@ function sermonSearchGrid(e){
     if(val !== ''){
         fetch('/API/sermons/search/'+val).then(response => response.json()).then(items => {
             send.innerHTML = '';
-            BuildSermonGrid(items);
+            if(items){
+                BuildSermonGrid(items);
+            }else{
+                send.innerHTML = "<h4 class='noResult'>No results found</h4>"
+            }
+            
         });
     }else{
         GridFetch(20);
@@ -37,6 +42,9 @@ function BuildSermonGrid(items){
         wrap.classList.add('sermonGridItem');
         wrap.appendChild(titleWrap);
         wrap.appendChild(footWrap);
+        wrap.addEventListener('click', function(){
+            PlayerFetch(item.ID);
+        })
         send.appendChild(wrap)
     }
 }

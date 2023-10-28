@@ -598,6 +598,7 @@ audio::-webkit-media-controls-enclosure{
   position: sticky;
   top: 2px;
   background-color: var(--card_background);
+  z-index: 15;
 }
 .search {
   width: 230px;
