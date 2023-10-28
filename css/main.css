@@ -445,7 +445,7 @@ audio::-webkit-media-controls-enclosure{
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  width: calc(100% - 420px);
+  width: 100%;
 }
 .playerTitle{
   display: flex;
@@ -453,6 +453,12 @@ audio::-webkit-media-controls-enclosure{
 }
 .playerMedia{
   display: flex;
+}
+#Player .audioplay{
+  height: 38px;
+}
+#Player p{
+  font-size: 12px;
 }
 
 
@@ -562,15 +568,14 @@ audio::-webkit-media-controls-enclosure{
   align-items: center;
   justify-content: space-between;
 }
-.search{
-  width: 400px;
-  font-size: 24px;
+.search {
+  width: 230px;
+  font-size: 18px;
   padding: 10px 15px;
   color: var(--text-color);
   border: unset;
   border-bottom: 1px solid var(--text-color);
   background-color: unset;
-
 }
 
 .search:focus-visible{

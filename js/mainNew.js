@@ -45,7 +45,7 @@ function PlayerBuild(item){
     var send = document.getElementById('Player');
     send.innerHTML = '';
     var titleWrap = document.createElement('div');
-    titleWrap.innerHTML = "<h4>"+item.Title+"</h4>"; 
+    titleWrap.innerHTML = "<h3>"+item.Title+"</h3>"; 
     titleWrap.innerHTML += '<p>'+item.Date+'</p>';
         
     var mediaWrap = document.createElement('span');
