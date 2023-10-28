@@ -592,6 +592,9 @@ audio::-webkit-media-controls-enclosure{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
 }
 .search {
   width: 230px;

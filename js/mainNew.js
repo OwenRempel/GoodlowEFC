@@ -1,3 +1,14 @@
+function sermonSearch(e){
+    var send = document.getElementById('SermonBuilder');
+    var val = e.value
+    if(val !== ''){
+        fetch('/API/sermons/search/'+val).then(response => response.json()).then(items => {
+            send.innerHTML = '';
+            BuildSermonGrid(items);
+        });
+    }
+}
+
 function GridFetch(number = 'all'){
         fetch('/API/sermons?limit='+number).then(response => response.json()).then(items => {
             BuildSermonGrid(items);
