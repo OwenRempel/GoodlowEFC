@@ -19,7 +19,7 @@ function BuildSermonGrid(items){
         if(item.Audio){
             mediaWrap.innerHTML = '<span class="material-symbols-outlined">music_note</span>'
         }
-        wrap.className('sermonGridItem');
+        wrap.classList.add('sermonGridItem');
         wrap.appendChild(titleWrap);
         wrap.appendChild(mediaWrap);
         send.appendChild(wrap)
