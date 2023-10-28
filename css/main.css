@@ -436,14 +436,14 @@ audio::-webkit-media-controls-enclosure{
 
 /*sermon Grid css*/
 
-#Player h4, p{
+#Player h3, p{
   padding: 0px;
   margin: 0px;
 }
 
-#Player{
+#Player {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
@@ -451,14 +451,39 @@ audio::-webkit-media-controls-enclosure{
   display: flex;
   flex-direction: column;
 }
-.playerMedia{
+.playerMedia {
   display: flex;
+  align-items: center;
 }
 #Player .audioplay{
   height: 38px;
 }
 #Player p{
   font-size: 12px;
+}
+@media only screen and (max-width: 1300px) {
+  #Player {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .playerTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    width: calc(100% - 10px);
+  }
+  .playerMedia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  #Player .audioplay {
+    height: 38px;
+    width: 100%;
+  }
 }
 
 
