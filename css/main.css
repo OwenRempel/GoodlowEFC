@@ -441,6 +441,7 @@ audio::-webkit-media-controls-enclosure{
   width: 80vw;
   margin: auto;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .sermonGridItem {
   background-color: var(--card_background);
