@@ -12,14 +12,15 @@ function BuildSermonGrid(items){
         var titleWrap = document.createElement('span');
         titleWrap.innerHTML = "<h4>"+item.Title+"</h4>"; 
         var footWrap = document.createElement("span");
-        footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>'; 
+        footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>';
+        mediaIconWrap = document.createElement('span'); 
         if(item.Audio){
-            footWrap.innerHTML += '<span class="Audio material-symbols-outlined">music_note</span>'
+            mediaIconWrap.innerHTML += '<span class="Audio material-symbols-outlined">music_note</span>'
         }
         if(item.File){
-            footWrap.innerHTML += '<span class="File material-symbols-outlined">slideshow</span>'
+            mediaIconWrap.innerHTML += '<span class="File material-symbols-outlined">slideshow</span>'
         }
-        
+        footWrap.appendChild(mediaIconWrap);
         wrap.classList.add('sermonGridItem');
         wrap.appendChild(titleWrap);
         wrap.appendChild(footWrap);
