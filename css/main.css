@@ -485,6 +485,19 @@ audio::-webkit-media-controls-enclosure{
     width: 100%;
   }
 }
+@media only screen and (min-width: 1800px) {
+  #Player .audioplay {
+    height: 38px;
+    width: 100%;
+  }
+  .playerTitle {
+    width: 700px; 
+  }
+  .playerMedia {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
 
 
 
@@ -615,6 +628,12 @@ audio::-webkit-media-controls-enclosure{
   border-bottom: 1px solid var(--text-color);
   background-color: unset;
 }
+@media only screen and (min-width: 1800px) {
+  .search {
+    width: 500px;
+  }
+}
+
 
 .search:focus-visible{
   border: unset;
