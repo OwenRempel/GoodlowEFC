@@ -12,7 +12,7 @@ function sermonSearchGrid(e){
             
         });
     }else{
-        GridFetch(20);
+        GridFetch();
     }
 }
 

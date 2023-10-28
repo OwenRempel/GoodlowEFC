@@ -487,6 +487,7 @@ audio::-webkit-media-controls-enclosure{
 }
 
 
+
 #SermonGrid {
   display: flex;
   width: 80vw;
@@ -524,6 +525,11 @@ audio::-webkit-media-controls-enclosure{
   overflow: hidden;
 }
 
+@media only screen and (max-width: 1000px) {
+  #SermonGrid {
+    width: 95vw;
+  }
+}
 
 @media only screen and (min-width: 1000px) {
 
