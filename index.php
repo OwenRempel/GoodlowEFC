@@ -7,6 +7,7 @@ $AllowedRoutes = [
     'media',
     'resources',
     'sermons',
+    'sermons_new',
     'stat'
 ];
 
