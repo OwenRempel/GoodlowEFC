@@ -61,7 +61,6 @@ function PlayerFetch(ID='none'){
     
 }
 function PlayerBuild(item){
-    console.log(item);
     item = item.Data[0]
     var send = document.getElementById('Player');
     send.innerHTML = '';
@@ -91,5 +90,4 @@ function PlayerBuild(item){
     mediaWrap.classList.add('playerMedia')
     send.appendChild(titleWrap);
     send.appendChild(mediaWrap);
-    
 }
