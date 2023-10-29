@@ -12,13 +12,12 @@
 
 
 
-:root{
-  --background2:#181f22;
-  --background:#0d1117
-  --audio-background:#38454a;
-  --shadow:unset;
-  --text-color:white;
-  --card_background:#2b2f31;
+:root {
+  --background: #07090c;
+  --audio-background: #212527;
+  --shadow: 0px 0px 0px 1px #bfbfbf14;
+  --text-color: white;
+  --card_background: #020202fa;
 }
 
 @media (prefers-color-scheme: light) {
@@ -28,6 +27,7 @@
     --text-color:black;
     --audio-background:unset;
     --card_background:#f2f7fa;
+    --menu:#272b2dfa
   }
 }
 
@@ -146,7 +146,7 @@ a,h1,h2,h3,h4,h5,h6{
   top: 5px;
   box-shadow:var(--shadow);
   position: sticky;
-  background-color: #272b2dfa;
+  background-color: var(--menu);
   z-index: 6;
   display: grid;
   grid-template-columns: 10fr 1fr;
@@ -508,6 +508,9 @@ audio::-webkit-media-controls-enclosure{
   margin: auto;
   flex-wrap: wrap;
   justify-content: center;
+}
+.sermonGridItem h3{
+  font-weight: 200;
 }
 .sermonGridItem {
   background-color: var(--card_background);
