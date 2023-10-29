@@ -18,6 +18,7 @@
   --shadow: 0px 0px 0px 1px #bfbfbf0a;
   --text-color: #f7f7f7;
   --card_background: #020202fa;
+  --menu:#020202fa
 }
 
 @media (prefers-color-scheme: light) {
