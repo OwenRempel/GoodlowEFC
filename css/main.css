@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600&family=Roboto:wght@100;300;400&display=swap');
 
 
 .material-symbols-outlined {
@@ -15,8 +15,8 @@
 :root {
   --background: #07090c;
   --audio-background: #212527;
-  --shadow: 0px 0px 0px 1px #bfbfbf14;
-  --text-color: white;
+  --shadow: 0px 0px 0px 1px #bfbfbf0a;
+  --text-color: #f7f7f7;
   --card_background: #020202fa;
 }
 
@@ -79,9 +79,25 @@ a {
 * {
   box-sizing: border-box;
 }
-a,h1,h2,h3,h4,h5,h6{
+a,h1,h2,h3,h4,h5,h6 {
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
+}
+p{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300; 
+}
+
+
+@media (prefers-color-scheme: light) {
+  a,h1,h2,h3,h4,h5,h6 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+  }
+  p{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500; 
+  }
 }
 
 
