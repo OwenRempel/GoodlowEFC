@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400&family=Roboto:wght@100;300;400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -80,7 +80,8 @@ a {
   box-sizing: border-box;
 }
 a,h1,h2,h3,h4,h5,h6{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
 }
 
 
