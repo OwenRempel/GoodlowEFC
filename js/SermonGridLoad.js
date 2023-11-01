@@ -55,7 +55,6 @@ function BuildSermonGrid(items){
 function PlayerFetch(ID='none'){
     if(ID === 'none'){
         var Url_ID = window.location.href.split('/');
-        console.log(Url_ID);
         if(Url_ID[4]){
             fetch('/API/sermons/'+Url_ID[4]).then(response => response.json()).then(items => {
                 console.log(items);

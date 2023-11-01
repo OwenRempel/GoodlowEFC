@@ -17,8 +17,8 @@
   --audio-background: #212527;
   --shadow: 0px 0px 0px 1px #bfbfbf0a;
   --text-color: #f7f7f7;
-  --card_background: #020202fa;
-  --menu:#020202fa
+  --card_background: #2e2e2efa;
+  --menu:#2d2d33fa
 }
 
 @media (prefers-color-scheme: light) {
@@ -643,7 +643,7 @@ audio::-webkit-media-controls-enclosure{
   border-radius: 4px;
   position: sticky;
   top: 2px;
-  background-color: var(--card_background);
+  background-color: var(--menu);
   z-index: 15;
 }
 .search {
