@@ -561,6 +561,10 @@ audio::-webkit-media-controls-enclosure{
   color: var(--text-color);
 }
 
+.mediaIconWrap{
+  display: flex;
+  flex-direction: row;
+}
 @media only screen and (max-width: 1000px) {
   #SermonGrid {
     width: 95vw;

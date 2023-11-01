@@ -34,7 +34,8 @@ function BuildSermonGrid(items){
         var footWrap = document.createElement("span");
         footWrap.classList.add('gridFootSpan')
         footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>';
-        mediaIconWrap = document.createElement('span'); 
+        mediaIconWrap = document.createElement('span');
+        mediaIconWrap.classList.add('mediaIconWrap'); 
         if(item.Audio){
             mediaIconWrap.innerHTML += '<span class="Audio"><svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24"><path d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/></svg></span>'
         }
@@ -58,7 +59,7 @@ function PlayerFetch(ID='none'){
         if(Url_ID[4]){
             fetch('/API/sermons/'+Url_ID[4]).then(response => response.json()).then(items => {
                 console.log(items);
-                if(items[0]['error'] && items[0]['error'] === 'The ID is invalid'){
+                if(items['error'] && items['error'] === 'The ID is invalid'){
                     fetch('/API/sermons/latest').then(response => response.json()).then(items => {
                         PlayerBuild(items);
                    });
