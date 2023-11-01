@@ -488,6 +488,7 @@ audio::-webkit-media-controls-enclosure{
 }
 #Player p{
   font-size: 12px;
+  min-width: 70px;  
 }
 @media only screen and (max-width: 1300px) {
   #Player {
@@ -512,6 +513,18 @@ audio::-webkit-media-controls-enclosure{
     height: 38px;
     width: 100%;
   }
+}
+@media only screen and (max-width:600px) {
+  .playerMedia {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column-reverse;
+  }
+  .btwidemob {
+    width: calc(100% - 20px);
+}
 }
 @media only screen and (min-width: 1800px) {
   #Player .audioplay {
