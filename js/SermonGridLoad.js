@@ -57,13 +57,7 @@ function PlayerFetch(ID='none'){
         var Url_ID = window.location.href.split('/');
         if(Url_ID[4]){
             fetch('/API/sermons/'+Url_ID[4]).then(response => response.json()).then(items => {
-                if(items['error'] && items['error'] === 'The ID is invalid'){
-                    fetch('/API/sermons/latest').then(response => response.json()).then(items => {
-                        PlayerBuild(items);
-                   });
-                }else{
                     PlayerBuild(items);
-                }
             });
         }else{
             fetch('/API/sermons/latest').then(response => response.json()).then(items => {
@@ -79,10 +73,14 @@ function PlayerFetch(ID='none'){
     
 }
 function PlayerBuild(item){
-    item = item.Data[0]
-    document.title = item.Title+' - Goodlow EFC';
     var send = document.getElementById('Player');
     send.innerHTML = '';
+    if(item['error']){
+        send.innerHTML = "<span class='playerError'><h3>Sermon Not Found</h3></span>"
+        return
+    }
+    item = item.Data[0]
+    document.title = item.Title+' - Goodlow EFC';
     var titleWrap = document.createElement('div');
     titleWrap.innerHTML = "<h3>"+item.Title+"</h3>"; 
     titleWrap.innerHTML += '<p>'+item.Date+'</p>';
