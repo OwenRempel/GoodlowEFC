@@ -16,7 +16,8 @@ function sermonSearchGrid(e){
     }
 }
 
-function GridFetch(number = 'all'){
+
+function GridFetch(number = 'all'){ 
         fetch('/API/sermons?limit='+number).then(response => response.json()).then(items => {
             BuildSermonGrid(items);
         });
@@ -50,10 +51,19 @@ function BuildSermonGrid(items){
 }
 function PlayerFetch(ID='none'){
     if(ID === 'none'){
-        fetch('/API/sermons/latest').then(response => response.json()).then(items => {
-             PlayerBuild(items);
-        });
+        var Url_ID = window.location.href.split('/');
+        console.log(Url_ID);
+        if(Url_ID[1]){
+            fetch('/API/sermons/'+Url_ID[1]).then(response => response.json()).then(items => {
+                PlayerBuild(items);
+            });
+        }else{
+            fetch('/API/sermons/latest').then(response => response.json()).then(items => {
+                PlayerBuild(items);
+           });
+        }
     }else{
+        window.history.replaceState(null, null, 'sermon/'+ID);
         fetch('/API/sermons/'+ID).then(response => response.json()).then(items => {
             PlayerBuild(items);
         });
