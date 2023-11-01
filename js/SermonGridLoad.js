@@ -34,10 +34,10 @@ function BuildSermonGrid(items){
         footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>';
         mediaIconWrap = document.createElement('span'); 
         if(item.Audio){
-            mediaIconWrap.innerHTML += '<span class="Audio material-symbols-outlined">music_note</span>'
+            mediaIconWrap.innerHTML += '<span class="Audio"><img src="/MediaFiles/photos/music_note.svg"></img></span>'
         }
         if(item.File){
-            mediaIconWrap.innerHTML += '<span class="File material-symbols-outlined">slideshow</span>'
+            mediaIconWrap.innerHTML += '<span class="File"><img src="/MediaFiles/photos/slideshow.svg"></img></span>'
         }
         footWrap.appendChild(mediaIconWrap);
         wrap.classList.add('sermonGridItem');
