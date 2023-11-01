@@ -53,8 +53,8 @@ function PlayerFetch(ID='none'){
     if(ID === 'none'){
         var Url_ID = window.location.href.split('/');
         console.log(Url_ID);
-        if(Url_ID[1]){
-            fetch('/API/sermons/'+Url_ID[1]).then(response => response.json()).then(items => {
+        if(Url_ID[4]){
+            fetch('/API/sermons/'+Url_ID[4]).then(response => response.json()).then(items => {
                 PlayerBuild(items);
             });
         }else{
