@@ -34,10 +34,10 @@ function BuildSermonGrid(items){
         footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>';
         mediaIconWrap = document.createElement('span'); 
         if(item.Audio){
-            mediaIconWrap.innerHTML += '<span class="Audio"><img src="/MediaFiles/photos/music_note.svg"></img></span>'
+            mediaIconWrap.innerHTML += '<span class="Audio"><svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24"><path d="M400-120q-66 0-113-47t-47-113q0-66 47-113t113-47q23 0 42.5 5.5T480-418v-422h240v160H560v400q0 66-47 113t-113 47Z"/></svg></span>'
         }
         if(item.File){
-            mediaIconWrap.innerHTML += '<span class="File"><img src="/MediaFiles/photos/slideshow.svg"></img></span>'
+            mediaIconWrap.innerHTML += '<span class="File"><svg xmlns="http://www.w3.org/2000/svg" height="24" fill="currentColor" viewBox="0 -960 960 960" width="24"><path d="m380-300 280-180-280-180v360ZM200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"/></svg></span>'
         }
         footWrap.appendChild(mediaIconWrap);
         wrap.classList.add('sermonGridItem');
