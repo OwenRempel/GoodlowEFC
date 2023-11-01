@@ -29,8 +29,10 @@ function BuildSermonGrid(items){
         const item = items.Data[i];
         var wrap = document.createElement('div');
         var titleWrap = document.createElement('span');
+        titleWrap.classList.add('gridTitleSpan')
         titleWrap.innerHTML = "<h4>"+item.Title+"</h4>"; 
         var footWrap = document.createElement("span");
+        footWrap.classList.add('gridFootSpan')
         footWrap.innerHTML += '<span class="PlayDate"><p>'+item.Date+'</p></span>';
         mediaIconWrap = document.createElement('span'); 
         if(item.Audio){

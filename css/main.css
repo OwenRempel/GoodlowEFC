@@ -546,18 +546,19 @@ audio::-webkit-media-controls-enclosure{
   padding: 0px;
   margin: 0px;
 }
-.sermonGridItem span:nth-of-type(1) {
+.gridTitleSpan {
   display: flex;
   flex-direction: column;
   height: calc(100% - 20px);
   justify-content: space-between;
   text-overflow: ellipsis;
 }
-.sermonGridItem span:nth-of-type(2) {
+.gridFootSpan {
   display: flex;
   justify-content: space-between;
   height: 25px;
   overflow: hidden;
+  color: var(--text-color);
 }
 
 @media only screen and (max-width: 1000px) {
