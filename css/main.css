@@ -202,7 +202,7 @@ p{
 
 @media only screen and (max-width: 1000px) {
   .header-wrap {
-    width:100vw;
+    width:100%;
     margin: auto;
     height: 110px;
     box-sizing: border-box;
@@ -578,6 +578,19 @@ audio::-webkit-media-controls-enclosure{
   #SermonGrid {
     width: 95vw;
   }
+}
+
+@media only screen and (max-width:600px){
+  .sermonGridItem {
+    background-color: var(--card_background);
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+}
 }
 
 @media only screen and (min-width: 1000px) {
