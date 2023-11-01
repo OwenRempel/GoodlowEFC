@@ -72,6 +72,7 @@ function PlayerFetch(ID='none'){
 }
 function PlayerBuild(item){
     item = item.Data[0]
+    document.title = item.Title+' - Goodlow EFC';
     var send = document.getElementById('Player');
     send.innerHTML = '';
     var titleWrap = document.createElement('div');
