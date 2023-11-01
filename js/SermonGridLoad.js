@@ -57,7 +57,6 @@ function PlayerFetch(ID='none'){
         var Url_ID = window.location.href.split('/');
         if(Url_ID[4]){
             fetch('/API/sermons/'+Url_ID[4]).then(response => response.json()).then(items => {
-                console.log(items);
                 if(items['error'] && items['error'] === 'The ID is invalid'){
                     fetch('/API/sermons/latest').then(response => response.json()).then(items => {
                         PlayerBuild(items);
