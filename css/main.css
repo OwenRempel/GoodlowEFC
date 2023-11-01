@@ -477,6 +477,7 @@ audio::-webkit-media-controls-enclosure{
 .playerTitle{
   display: flex;
   flex-direction: column;
+  padding: 10px;
 }
 .playerMedia {
   display: flex;
