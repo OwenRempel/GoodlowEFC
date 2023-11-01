@@ -63,7 +63,7 @@ function PlayerFetch(ID='none'){
            });
         }
     }else{
-        window.history.replaceState(null, null, 'sermon/'+ID);
+        window.history.replaceState(null, null, '/sermon/'+ID);
         fetch('/API/sermons/'+ID).then(response => response.json()).then(items => {
             PlayerBuild(items);
         });
