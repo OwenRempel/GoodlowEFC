@@ -252,6 +252,7 @@ p{
     background-color:#272b2d;
     transition:  all 300ms;
     display: block;
+    z-index: 20;
   }
   .menuItems{
     width: fit-content;
