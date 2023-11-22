@@ -153,12 +153,16 @@ p{
   max-height: 200px;
   margin: 10px;
 }
-.sunday{
-    grid-column: 3;
-    color: white;
-    font-size: 24px;
-    font-weight: 500;
-    text-shadow: 1px 1px 5px black;
+.sunday {
+  grid-column: 3;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 1px 1px 5px black;
+  background: #000000bd;
+  padding: 20px;
+  padding-bottom: 30px;
+  padding-top: 5px;
 }
 .menu {
   height: 60px;
