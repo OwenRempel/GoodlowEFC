@@ -265,9 +265,10 @@ function updateFormData($formData, $localArray, $ID){
     }
     $final = implode(', ', $final);
     $dataArray['ID'] = $ID;
-    $dataUpdate = $DB->query('UPDATE '.$localArray['tableName'].' SET '.$final.' WHERE ID=:ID', $dataArray);
+    echo $final;
+    //$dataUpdate = $DB->query('UPDATE '.$localArray['tableName'].' SET '.$final.' WHERE ID=:ID', $dataArray);
 
-    echo stouts($localArray['tableTitle'].' Updated successfully', 'success');
+    //echo stouts($localArray['tableTitle'].' Updated successfully', 'success');
 
 
 }
