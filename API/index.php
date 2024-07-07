@@ -322,7 +322,7 @@ function selectUpdateFormItem($formArray, $redirectName, $ID){
     
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Update '.$formArray['formDesc'];
-    $arrayToSend['form']['callBack'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName.'/'.$ID;
+    $arrayToSend['form']['callBack'] = 'HTTPS://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName.'/'.$ID;
     foreach($formArray['items'] as $items){
         $itemArray = [];
         if($items['type'] == 'date'){
@@ -370,7 +370,7 @@ function getFormStruct($formArray, $redirectName, $action){
     $arrayToSend = [];
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Add '.$formArray['formTitle'];
-    $arrayToSend['form']['callBack'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName;
+    $arrayToSend['form']['callBack'] = 'HTTPS://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName;
     //$arrayToSend['form']['callBack'] = '/API/'.$redirectName; This makes more sense becasus then there is not confusion
     //($_ENV['HTTPS'] ? "https" : 'http').'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].
     foreach($formArray['items'] as $items){
