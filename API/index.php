@@ -187,7 +187,7 @@ function search($localArray, $query){
     $selectItems = implode(', ', $selectItems);
 
     if(isset($_GET['limit'])){
-        if($limit == 'all'){
+        if($_GET['limit'] == 'all'){
             $limit = '';
         }else{
             $limit = 'Limit '.intval($_GET['limit']);
@@ -370,7 +370,8 @@ function getFormStruct($formArray, $redirectName, $action){
     $arrayToSend = [];
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Add '.$formArray['formTitle'];
-    $arrayToSend['form']['callBack'] = '/API/'.$redirectName;
+    $arrayToSend['form']['callBack'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName;
+    //$arrayToSend['form']['callBack'] = '/API/'.$redirectName; This makes more sense becasus then there is not confusion
     //($_ENV['HTTPS'] ? "https" : 'http').'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].
     foreach($formArray['items'] as $items){
        
