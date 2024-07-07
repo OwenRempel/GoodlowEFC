@@ -371,8 +371,8 @@ function getFormStruct($formArray, $redirectName, $action){
     $arrayToSend = [];
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Add '.$formArray['formTitle'];
-    $arrayToSend['form']['callBack'] = 'https://'.$_SERVER['SERVER_NAME'].'/API/'.$redirectName;
-    //$arrayToSend['form']['callBack'] = '/API/'.$redirectName; //This makes more sense becasus then there is not confusion
+    //$arrayToSend['form']['callBack'] = 'https://'.$_SERVER['SERVER_NAME'].'/API/'.$redirectName;
+    $arrayToSend['form']['callBack'] = '/API/'.$redirectName; //This makes more sense becasus then there is not confusion
     //($_ENV['HTTPS'] ? "https" : 'http').'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].
     foreach($formArray['items'] as $items){
        
