@@ -101,10 +101,7 @@ function InitRouter(){
         if($method == 'POST' or $method == 'PUT'){
             $PHPinput = file_get_contents('php://input');
             $PostInput = json_decode($PHPinput, 1);
-            //parse_str($PHPinput, $_PUT);   
-            
-            echo json_encode($_PUT);
-            exit();
+            parse_str($PHPinput, $_PUT);   
             
             //This is the check to see if the api should use $_POST or php://input
             if(isset($_POST[$localArray['formName']])){
