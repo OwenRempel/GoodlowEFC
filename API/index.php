@@ -142,7 +142,7 @@ function InitRouter(){
             }else{
                 echo stouts('The action you have entered is not alowed on a GET Request', 'error');
             }
-        }elseif($method == "POST"){
+        }elseif($method == "POST" or $method == 'post'){
            
             //This is where the receved form is entered into the database
             if(!empty($PostData)){
@@ -150,7 +150,7 @@ function InitRouter(){
             }else{
                 echo stouts('No data recieved POST', 'error');
             }
-        }elseif($method == 'PUT'){
+        }elseif($method == 'PUT' or $method == 'put'){
             if(!empty($PostData) and !empty($Routes[1])){
                 updateFormData($PostData, $localArray, $Routes[1]);
             }else{
