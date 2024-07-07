@@ -265,10 +265,10 @@ function updateFormData($formData, $localArray, $ID){
     }
     $final = implode(', ', $final);
     $dataArray['ID'] = $ID;
-    echo $final;
-    //$dataUpdate = $DB->query('UPDATE '.$localArray['tableName'].' SET '.$final.' WHERE ID=:ID', $dataArray);
+    //echo $final;
+    $dataUpdate = $DB->query('UPDATE '.$localArray['tableName'].' SET '.$final.' WHERE ID=:ID', $dataArray);
 
-    //echo stouts($localArray['tableTitle'].' Updated successfully', 'success');
+    echo stouts($localArray['tableTitle'].' Updated successfully', 'success');
 
 
 }
@@ -557,7 +557,7 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                         $ext = explode(',', $fileItems['accept']);
                     }
                     if(!in_array($file_ext,$ext)){
-                        $errors[]="extension not allowed, please choose Allowed file type owen. $file_ext";
+                        $errors[]="extension not allowed, please choose Allowed file type. $file_ext";
                     }
                     
                     if($file_size > 80000000){
