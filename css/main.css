@@ -380,8 +380,7 @@ audio::-webkit-media-controls-enclosure{
   gap: 30px;
   grid-template-areas: 
     "welcome welcome" 
-      "sermon pastor"
-      "video map"
+      "sermon map"
       "stat event";
 }
 
@@ -448,12 +447,14 @@ audio::-webkit-media-controls-enclosure{
 }
 .block-video{
   grid-area: video;
+  display: none;
 }
 .block-stat{
   grid-area: stat;
 }
 .block-pastor{
   grid-area: pastor;
+  display: none;
 }
 .block-event{
   grid-area: event;
