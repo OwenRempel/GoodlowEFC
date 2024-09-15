@@ -395,6 +395,7 @@ audio::-webkit-media-controls-enclosure{
 
   .youtubeHome{
     width: 95vw;
+    display: none;
   }
   .home-wraper .AudioTitle h1{
     padding:20px 0px;
@@ -428,6 +429,7 @@ audio::-webkit-media-controls-enclosure{
   .youtube{
     width: 95vw;
     height: calc(95vw * .5);
+
   }
 }
 
