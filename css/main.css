@@ -380,8 +380,8 @@ audio::-webkit-media-controls-enclosure{
   gap: 30px;
   grid-template-areas: 
     "welcome welcome" 
-      "sermon map"
-      "stat event";
+      "sermon event"
+      "stat map";
 }
 
 
