@@ -101,7 +101,7 @@ function InitRouter(){
         if($method == 'POST' or $method == 'PUT'){
             $PHPinput = file_get_contents('php://input');
             $PostInput = json_decode($PHPinput, 1);
-            parse_str($PHPinput, $_PUT);    
+            parse_str($PHPinput, $_PUT);   
             
             //This is the check to see if the api should use $_POST or php://input
             if(isset($_POST[$localArray['formName']])){
@@ -142,7 +142,7 @@ function InitRouter(){
             }else{
                 echo stouts('The action you have entered is not alowed on a GET Request', 'error');
             }
-        }elseif($method == "POST"){
+        }elseif($method == "POST" or $method == 'post'){
            
             //This is where the receved form is entered into the database
             if(!empty($PostData)){
@@ -150,7 +150,7 @@ function InitRouter(){
             }else{
                 echo stouts('No data recieved POST', 'error');
             }
-        }elseif($method == 'PUT'){
+        }elseif($method == 'PUT' or $method == 'put'){
             if(!empty($PostData) and !empty($Routes[1])){
                 updateFormData($PostData, $localArray, $Routes[1]);
             }else{
@@ -187,7 +187,7 @@ function search($localArray, $query){
     $selectItems = implode(', ', $selectItems);
 
     if(isset($_GET['limit'])){
-        if($limit == 'all'){
+        if($_GET['limit'] == 'all'){
             $limit = '';
         }else{
             $limit = 'Limit '.intval($_GET['limit']);
@@ -265,6 +265,7 @@ function updateFormData($formData, $localArray, $ID){
     }
     $final = implode(', ', $final);
     $dataArray['ID'] = $ID;
+    //echo $final;
     $dataUpdate = $DB->query('UPDATE '.$localArray['tableName'].' SET '.$final.' WHERE ID=:ID', $dataArray);
 
     echo stouts($localArray['tableTitle'].' Updated successfully', 'success');
@@ -322,7 +323,7 @@ function selectUpdateFormItem($formArray, $redirectName, $ID){
     
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Update '.$formArray['formDesc'];
-    $arrayToSend['form']['callBack'] = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].'/API/'.$redirectName.'/'.$ID;
+    $arrayToSend['form']['callBack'] = 'https://'.$_SERVER['SERVER_NAME'].'/API/'.$redirectName.'/'.$ID;
     foreach($formArray['items'] as $items){
         $itemArray = [];
         if($items['type'] == 'date'){
@@ -370,7 +371,8 @@ function getFormStruct($formArray, $redirectName, $action){
     $arrayToSend = [];
     $arrayToSend['form']['formName'] = $formArray['formName'];
     $arrayToSend['form']['formTitle'] = 'Add '.$formArray['formTitle'];
-    $arrayToSend['form']['callBack'] = '/API/'.$redirectName;
+    //$arrayToSend['form']['callBack'] = 'https://'.$_SERVER['SERVER_NAME'].'/API/'.$redirectName;
+    $arrayToSend['form']['callBack'] = '/API/'.$redirectName; //This makes more sense becasus then there is not confusion
     //($_ENV['HTTPS'] ? "https" : 'http').'://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].
     foreach($formArray['items'] as $items){
        
@@ -555,7 +557,7 @@ function insertFormData($RecivedFormData, $localArray, $Routes){
                         $ext = explode(',', $fileItems['accept']);
                     }
                     if(!in_array($file_ext,$ext)){
-                        $errors[]="extension not allowed, please choose Allowed file type owen. $file_ext";
+                        $errors[]="extension not allowed, please choose Allowed file type. $file_ext";
                     }
                     
                     if($file_size > 80000000){
