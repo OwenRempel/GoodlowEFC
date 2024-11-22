@@ -245,7 +245,9 @@ p{
 
 @media only screen and (max-width: 1500px) {
   .header-wrap {
-    width:100%;
+    position: relative;
+    width: fit-content;
+    margin: auto;
   }
   .header{
     width: 97vw;
@@ -302,7 +304,7 @@ p{
     font-size: 24px;
     /* background: #2c2c2cbd; */
     display: block;
-    text-align: justify;
+    z-index: 4;
 }
   
   .sunday p {
