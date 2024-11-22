@@ -488,7 +488,7 @@ audio::-webkit-media-controls-enclosure{
   .maps {
     width: 92vw;
     height: calc(92vw* .9);
-}
+  }
   .youtube{
     width: 95vw;
     height: calc(95vw * .5);
