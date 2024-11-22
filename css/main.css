@@ -268,7 +268,7 @@ p{
     grid-template-columns: 1fr 4fr 1fr;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr;
   }
   .header {
     width: unset;
@@ -280,6 +280,7 @@ p{
     background-color: unset;
     background-image: none;
     position: relative;
+    grid-row: 1;
   }
   .logo {
     height: 90px;
@@ -287,7 +288,20 @@ p{
     
   }
   .sunday{
-     display: none;
+     grid-row: 2;
+    position: absolute;
+    width: calc(100% - 20px);
+    top: 0px;
+    right: 10px;
+    /* padding: 15px 30px; */
+    font-size: 24px;
+    /* background: #2c2c2cbd; */
+    display: block;
+    text-align: justify;
+  }
+  
+  .sunday p {
+    grid-column: unset;
   }
   .menu{
     position: absolute;
