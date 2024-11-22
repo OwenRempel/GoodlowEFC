@@ -108,7 +108,10 @@ p{
   font-style: normal;
 }
 
-
+.title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
 
 .btn {
   text-decoration: none;
@@ -209,7 +212,19 @@ p{
   margin-right: 20px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1500px) {
+  .header-wrap {
+    width:100%;
+  }
+  .header{
+    width: 97vw;
+  }
+  .menu{
+    width: 97vw;
+  }
+}
+
+@media only screen and (max-width: 900px) {
   .header-wrap {
     width:100%;
     margin: auto;
@@ -411,9 +426,15 @@ audio::-webkit-media-controls-enclosure{
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
+.content{
+  width: 97vw;
+}
+}
+
+@media only screen and (max-width: 900px) {
   .content {
-    width: 95vw;
+    width: 97vw;
     margin: 10px auto;
   }
 
@@ -622,6 +643,15 @@ audio::-webkit-media-controls-enclosure{
 .mediaIconWrap{
   display: flex;
   flex-direction: row;
+}
+
+.gridTitleSpan h4 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.PlayDate p {
+  font-size: 12px;
 }
 @media only screen and (max-width: 1000px) {
   #SermonGrid {

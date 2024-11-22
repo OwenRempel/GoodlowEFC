@@ -39,7 +39,7 @@ function YoutubeBuilder(data){
         YoutubeItem.setAttribute('allowFullScreen', '')
         var videoAbout = document.createElement('div');
         videoAbout.classList.add('videoAbout');
-        videoAbout.innerHTML = '<h2>'+item.Title+'</h2> <p>'+item.Date+'</p>'
+        videoAbout.innerHTML = '<h2 class="title">'+item.Title+'</h2> <p>'+item.Date+'</p>'
         var aboutWraper = document.createElement('div');
         aboutWraper.classList.add('aboutWraper');
         aboutWraper.innerHTML = '<p>'+item.About+'</p>';
