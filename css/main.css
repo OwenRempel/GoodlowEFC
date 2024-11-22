@@ -534,6 +534,13 @@ audio::-webkit-media-controls-enclosure{
   grid-area: event;
 }
 
+/*/////////// CSS For statment of faith Page/////////*/
+
+.Statements{
+  width: min(100%, 1000px);
+  columns: auto;
+}
+
 /*/////////// CSS For sermons Page/////////*/
 
 /*sermon Grid css*/
