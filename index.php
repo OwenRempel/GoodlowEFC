@@ -1,9 +1,11 @@
 <?php
 
 
-header("Cache-Control: no-cache, no-store, must-revalidate"); // Forces browsers to fetch the latest version
-header("Pragma: no-cache");
-header("Expires: 0");
+// Cache for 1 day
+header("Cache-Control: max-age=86400, must-revalidate"); // Cache for 1 day, force revalidation after expiration
+header("Pragma: cache"); // Allow caching
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 86400) . " GMT"); // Set expiration time 1 day from now
+
 
 
 //this is an extra check to prevent file structure climbing
