@@ -541,16 +541,23 @@ audio::-webkit-media-controls-enclosure{
 }
 
 .Statements p{
-  width: fit-content;
+  width: min(100%, 800px);
 }
 
 .stat-item{
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+  .stat-item{
+    grid-template-columns: 1fr;
+  }
 }
 
 .s-item {
-  padding: 20px;
+  padding: 10px;
 }
 
 /*/////////// CSS For sermons Page/////////*/
