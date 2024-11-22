@@ -108,6 +108,19 @@ p{
   font-style: normal;
 }
 
+
+@media (prefers-color-scheme: dark) {
+  h2{
+    font-weight: 300;
+  }
+  a,h3,h4,h5,h6 {
+    font-weight: 300;
+  }
+  p{
+    font-weight: 400;
+  }
+}
+
 .title {
   font-family: "Raleway", sans-serif;
   font-weight: 400;
