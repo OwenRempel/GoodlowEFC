@@ -151,7 +151,9 @@ p{
 }
 
 .header-wrap {
-  background-color: none;
+  position: relative;
+  width: fit-content;
+  margin: auto;
 }
 
 .header {
