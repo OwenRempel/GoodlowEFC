@@ -17,6 +17,7 @@
   --audio-background: #232629;
   --shadow: 0px 0px 0px 1px #bfbfbf0a;
   --text-color: #f7f7f7;
+  --light-text-color: #f7f7f7;
   --card_background: #2f3136fa;
   --menu:#2c2c32;
   --player:#2d2d33fa;
@@ -30,6 +31,7 @@
     --background:white;
     --shadow:3px 3px 7px 0px #455a6494;
     --text-color:black;
+    --light-text-color: #f7f7f7;
     --audio-background:unset;
     --card_background:#ffffff;
     --menu:#272b2dfa;
@@ -188,6 +190,7 @@ p{
 }
 
 .sunday p {
+  color: var(--light-text-color);
   padding: 10px 20px;
   margin: 0px;
   text-align: right;
