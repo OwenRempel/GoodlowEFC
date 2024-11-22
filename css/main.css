@@ -538,6 +538,7 @@ audio::-webkit-media-controls-enclosure{
 
 .Statements{
   width: min(100%, 1500px);
+  padding: 10px;
 }
 
 .Statements p{
@@ -547,7 +548,7 @@ audio::-webkit-media-controls-enclosure{
 .stat-item{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 20px;
 }
 
 @media only screen and (max-width: 900px) {
@@ -556,9 +557,7 @@ audio::-webkit-media-controls-enclosure{
   }
 }
 
-.s-item {
-  padding: 10px;
-}
+
 
 /*/////////// CSS For sermons Page/////////*/
 
