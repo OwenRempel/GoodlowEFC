@@ -443,6 +443,11 @@ audio::-webkit-media-controls-enclosure{
   .content{
     width: 97vw;
   }
+
+.maps{
+  width: calc(97vw / 2 - 15px);
+  height: calc((97vw / 2 - 15px) * .5);
+}
 }
 
 @media only screen and (max-width: 900px) {
