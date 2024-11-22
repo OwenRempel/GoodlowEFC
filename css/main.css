@@ -540,10 +540,13 @@ audio::-webkit-media-controls-enclosure{
   width: min(100%, 1500px);
 }
 
+.Statements p{
+  width: fit-content;
+}
+
 .stat-item{
-  columns: auto;
-  column-gap: 30px;
-  column-width: 500px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .s-item {
