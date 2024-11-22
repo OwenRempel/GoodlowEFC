@@ -1,10 +1,12 @@
 <?php
 
 
-// Cache for 1 day
-header("Cache-Control: max-age=86400, must-revalidate"); // Cache for 1 day, force revalidation after expiration
+$cache_days = 3;
+
+// Cache for n days
+header("Cache-Control: max-age=" . (86400 * $cache_days) . ", must-revalidate"); // Cache for n days, force revalidation after expiration
 header("Pragma: cache"); // Allow caching
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + 86400) . " GMT"); // Set expiration time 1 day from now
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + (86400 * $cache_days)) . " GMT"); // Set expiration time n days from now
 
 
 
