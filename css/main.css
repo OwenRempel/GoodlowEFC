@@ -438,6 +438,11 @@ audio::-webkit-media-controls-enclosure{
   align-items: flex-end;
 }
 
+.weekly-event h2,h3{
+  margin: 0px;
+  padding-bottom: 5px;
+}
+
 
 @media only screen and (max-width: 1500px) {
   .content{
