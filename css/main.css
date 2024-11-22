@@ -34,7 +34,7 @@
     --card_background:#ffffff;
     --menu:#272b2dfa;
     --player:#ffffff;
-    --block-back: #1f2024;
+    --block-back: #fafbfc;
   }
 }
 
@@ -426,10 +426,10 @@ audio::-webkit-media-controls-enclosure{
 }
 
 
-@media only screen and (max-width: 900px) {
-.content{
-  width: 97vw;
-}
+@media only screen and (max-width: 1500px) {
+  .content{
+    width: 97vw;
+  }
 }
 
 @media only screen and (max-width: 900px) {
