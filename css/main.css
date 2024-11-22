@@ -84,32 +84,30 @@ a {
 * {
   box-sizing: border-box;
 }
-a,h1,h2,h3,h4,h5,h6 {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
+h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
   font-style: normal;
 }
-p{
+h2{
   font-family: "Nunito", sans-serif;
   font-optical-sizing: auto;
   font-weight: 200;
   font-style: normal;
 }
-
-
-@media (prefers-color-scheme: light) {
-  a,h1,h2,h3,h4,h5,h6 {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  p{
-    font-family: "Nunito", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-  }
+a,h3,h4,h5,h6 {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
 }
+p{
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
 
 
 .btn {
@@ -322,7 +320,6 @@ p{
 .AudioDate p{
   padding: 0px;
   margin: 0px;
-  margin-left: 10px;
   margin-bottom: 10px;
 }
 
@@ -397,6 +394,10 @@ audio::-webkit-media-controls-enclosure{
   padding: 15px;
 }
 
+.block-stat p{
+  line-height: 30px;
+}
+
 .TitleDateWrap{
   display: flex;
   flex-direction: column;
@@ -445,14 +446,18 @@ audio::-webkit-media-controls-enclosure{
     flex-direction: column;
     gap: 30px;
   }
-  .maps{
-    width: 95vw;
-    height: calc(95vw* .5);
-  }
+  .maps {
+    width: 92vw;
+    height: calc(92vw* .9);
+}
   .youtube{
     width: 95vw;
     height: calc(95vw * .5);
 
+  }
+
+  .AudioHeader {
+    align-items: center;
   }
 }
 
