@@ -438,7 +438,7 @@ audio::-webkit-media-controls-enclosure{
   align-items: flex-end;
 }
 
-.weekly-event h2,h3{
+.weekly-event h2, .weekly-event h3{
   margin: 0px;
   padding-bottom: 5px;
 }
@@ -537,8 +537,13 @@ audio::-webkit-media-controls-enclosure{
 /*/////////// CSS For statment of faith Page/////////*/
 
 .Statements{
-  width: min(100%, 1000px);
+  width: min(100%, 1500px);
+}
+
+.stat-item{
   columns: auto;
+  column-gap: 30px;
+  column-width: 500px;
 }
 
 /*/////////// CSS For sermons Page/////////*/
