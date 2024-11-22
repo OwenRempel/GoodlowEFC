@@ -1,5 +1,11 @@
 <?php
 
+
+header("Cache-Control: no-cache, no-store, must-revalidate"); // Forces browsers to fetch the latest version
+header("Pragma: no-cache");
+header("Expires: 0");
+
+
 //this is an extra check to prevent file structure climbing
 $AllowedRoutes = [
     'blog',
