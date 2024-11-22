@@ -175,16 +175,29 @@ p{
   margin: 10px;
 }
 .sunday {
-  grid-column: 3;
-  color: white;
+  position: absolute;
+  width: calc(100% - 20px);
+  top: 0px;
+  right: 10px;
+  /* padding: 15px 30px; */
   font-size: 24px;
-  font-weight: 500;
-  text-shadow: 1px 1px 5px black;
-  background: #2c2c2cbd;
-  padding: 20px;
-  padding-bottom: 30px;
-  padding-top: 5px;
+  /* background: #2c2c2cbd; */
+  display: grid;
+  grid-template-columns: 300px auto;
+  justify-items: end;
 }
+
+.sunday p {
+  padding: 10px 20px;
+  margin: 0px;
+  text-align: right;
+  grid-column: 2;
+  background: #2c2c2cbd;
+  width: fit-content;
+  float: right;
+  border-radius: 0px 0px 10px 10px;
+}
+
 .menu {
   height: 60px;
   width: 90vw;
