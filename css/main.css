@@ -546,11 +546,15 @@ audio::-webkit-media-controls-enclosure{
   column-width: 500px;
 }
 
+.s-item {
+  padding: 20px;
+}
+
 /*/////////// CSS For sermons Page/////////*/
 
 /*sermon Grid css*/
 
-#Player h3, p{
+#Player h3{
   padding: 0px;
   margin: 0px;
 }
@@ -656,7 +660,7 @@ audio::-webkit-media-controls-enclosure{
   /*box-shadow: 1px 1px 3px #00000036;*/
   box-shadow: var(--shadow);
 }
-.sermonGridItem h4, p{
+.sermonGridItem h4{
   padding: 0px;
   margin: 0px;
 }
