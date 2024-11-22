@@ -2,6 +2,8 @@
 //This is the main js for getting all of the data for the pages
 //Here is where we will get the most recent Bulletin
 
+//TODO: this page containes allot of old code from a previous revision. In need of some house cleaning
+
 function GetBulletin(){
     var send = document.getElementById('BulletinBuilder');
     fetch('/API/bulletins?limit=1').then(response => response.json()).then(items => {
@@ -72,7 +74,10 @@ function sermonBuilder(data, share = false){
         var wrap = document.createElement('div');
         var titlewrap = document.createElement('div');
         var datewrap = document.createElement('span');
-        var filewrap = document.createElement('span');    
+        var titleDateWrap = document.createElement('span');
+        var filewrap = document.createElement('span');
+        var audioHeader = document.createElement('span');
+          
         var audiowrap = document.createElement('span');
         if(share){
             var share = document.createElement('a');
@@ -101,14 +106,18 @@ function sermonBuilder(data, share = false){
             audiowrap.appendChild(file)
         }    
         
+        titleDateWrap.classList.add("TitleDateWrap")
+        audioHeader.classList.add('AudioHeader');  
         titlewrap.classList.add('AudioTitle');
         datewrap.classList.add('AudioDate');
         filewrap.classList.add('AudioDoc');
         audiowrap.classList.add('AudioFile');
         wrap.classList.add('AudioItem');
-        wrap.appendChild(titlewrap);
-        wrap.appendChild(datewrap);
-        wrap.appendChild(filewrap);
+        titleDateWrap.appendChild(titlewrap);
+        titleDateWrap.appendChild(datewrap);
+        audioHeader.appendChild(titleDateWrap);
+        audioHeader.appendChild(filewrap)
+        wrap.appendChild(audioHeader);
         wrap.appendChild(audiowrap);
        
         

@@ -1,7 +1,7 @@
 <?php
 
 
-$cache_days = 3;
+$cache_days = 5;
 
 // Cache for n days
 header("Cache-Control: max-age=" . (86400 * $cache_days) . ", must-revalidate"); // Cache for n days, force revalidation after expiration
