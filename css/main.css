@@ -189,6 +189,7 @@ p{
   display: grid;
   grid-template-columns: 300px auto;
   justify-items: end;
+  z-index: 4;
 }
 
 .sunday p {
