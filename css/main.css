@@ -255,13 +255,15 @@ p{
 
 @media only screen and (max-width: 900px) {
   .header-wrap {
-    width:100%;
+    position: relative;
+    width: 100%;
     margin: auto;
+    margin-bottom: 70px;
     height: 110px;
     box-sizing: border-box;
     box-shadow: unset;
     background-color: #272b2d;
-    padding-right:20px;
+    padding-right: 20px;
     background-image: none;
     position: relative;
     display: grid;
@@ -269,7 +271,7 @@ p{
     align-items: center;
     justify-items: center;
     grid-template-rows: 1fr 1fr;
-  }
+}
   .header {
     width: unset;
     height: 100%;
@@ -287,10 +289,11 @@ p{
     grid-column: 3;
     
   }
-  .sunday{
-     grid-row: 2;
+  .sunday {
+    grid-row: 2;
     position: absolute;
     width: calc(100% - 20px);
+    margin-top: -5px;
     top: 0px;
     right: 10px;
     /* padding: 15px 30px; */
@@ -298,10 +301,11 @@ p{
     /* background: #2c2c2cbd; */
     display: block;
     text-align: justify;
-  }
+}
   
   .sunday p {
     grid-column: unset;
+    text-align: center;
   }
   .menu{
     position: absolute;
